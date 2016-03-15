@@ -14,21 +14,31 @@ public:
 	{
 		return true;
 	}
-
 };
 
 template <class T>
 class MinMaxHeap
 {
-	vector <T> a;
-	T min;
-	T max;
+	vector <T> heap;
+	vector <T> heap;
+	vector <T> heap;
 	int size;
 public:
-	MinMaxHeap( vector <T> c , int siz)
+	T left( int i)
 	{
-		a = c;
-		size = siz;
+		return (heap(2*(i-1-(int)log2(i))));
+	}
+	T right(int i)
+	{
+		return (heap(2*(i-1-(int)log2(i))+1));
+	}
+	void order(int i)
+	{
+
+	}
+	MinMaxHeap()
+	{
+		size = 0;
 	}
 	void insert(T elem)
 	{
@@ -50,16 +60,6 @@ public:
 	void deleteElems(Predicate <T> predObject)
 	{
 		a.erase(a.begin(),a.begin()+a.size());	
-	}
-
-protected:
-	vector <T> minHeap( vector <T> x )
-	{
-		
-	}
-	vector <T> maxHeap(vector <T> x)
-	{
-
 	}
 };
 
